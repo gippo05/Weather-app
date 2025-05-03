@@ -3,7 +3,7 @@ const weather = document.getElementById('weather');
 const city = document.getElementById('city');
 const inputEl = document.getElementById('input-el');
 const submitBtn = document.getElementById('submit-btn');
-
+const errorEl = document.getElementById('error-el');
 
 
 
@@ -17,6 +17,12 @@ submitBtn.addEventListener('click', () =>{
         alert("Please enter a city name!")
         return;
     }
+    if (cityName.length < 3){
+        alert("Please enter a valid city name!")
+        return;
+    }
+
+   
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchName}&appid=3af68efb4f427c9b53ec2c6d8bffbf4e&units=metric`)
 .then(res => res.json())
 .then(data => {
@@ -25,6 +31,9 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchName}&appid=3af
     weather.textContent = `Weather: ${data.weather[0].description}`
 })
 .catch(error =>  {
-    console.error("Not found!!", error)
+    if (!error){
+        errorEl.textContent = "";
+    }
+    errorEl.textContent = "Location not found, please try again.", error;
 })
 });
