@@ -11,7 +11,8 @@ const submitBtn = document.getElementById('submit-btn');
 submitBtn.addEventListener('click', () =>{
     let cityName = inputEl.value.trim();
     let searchName = cityName.toString();
-
+    inputEl.value = "";
+    
     if (!cityName){
         alert("Please enter a city name!")
         return;

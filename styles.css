@@ -1,6 +1,7 @@
 :root{
     --primary-color: #3498db;
-    --secondary-color: #2ecc71;       
+    --secondary-color: #2ecc71; 
+    --tertiary-color: #FFFFFF;      
 }
 
 *{
@@ -8,8 +9,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    margin: 0;
+}
 
 .main-container{
     min-height: 100vh;
     background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-container{
+    height: 600px;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--tertiary-color);
+    text-align: center;
+}
+.second-container input{
+    margin-top: 50px;
+    position: relative;
+    height: 50px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+}
+button{
+    
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border: none;
+    border-radius: 40px;
+    height: 40px;
+    width: 60%;
 }
