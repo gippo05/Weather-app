@@ -1,7 +1,14 @@
 :root{
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71; 
-    --tertiary-color: #FFFFFF;      
+    --primary-color: #121212;
+    --card-panel: #1e1e1e; 
+    --text: #e0e0e0;  
+    --secondText: #b0b0b0;
+    --temp: #00bfff;
+    --error: #ff5f5f;
+    --button: #2a2a2a;
+    --btnHover: #00bfff;
+    --input: #1a1a1a;
+    --border: #2c2c2c;    
 }
 
 *{
@@ -23,14 +30,16 @@ body{
 }
 h1{
     margin-top: 20px;
+    color: var(--text);
 }
 .second-container{
     height: 600px;
     width: 100%;
     max-width: 400px;
-    background-color: var(--tertiary-color);
+    background-color: var(--card-panel);
     text-align: center;
     border-radius: 10px;
+    border: 1px solid var(--border);
 }
 .second-container input{
     margin-top: 50px;
@@ -38,25 +47,33 @@ h1{
     height: 50px;
     width: 80%;
     border-radius: 10px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--border);
+    background-color: var(--input);
+    color: var(--text);
 }
 button{
     
     margin-top: 20px;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
+    background-color: var(--button);
+    color: var(--text);
     border: none;
     border-radius: 40px;
     height: 40px;
     width: 60%;
     font-size: 20px;
 }
+button:hover{
+    background-color: var(--btnHover);
+}
 .texts{
     margin-top: 60px;
 }
+h2{
+    color: var(--secondText);
+}
 h3{
     font-size: 20px;
-    color: red;
+    color: var(--error);
     font-weight: bold;
 }
 #temp{
@@ -64,4 +81,7 @@ h3{
 }
 #weather{
     font-size: 1.8rem;
+}
+#w-icon{
+    height: 80px;
 }
